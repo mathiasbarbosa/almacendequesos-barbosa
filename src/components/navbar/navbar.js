@@ -1,6 +1,6 @@
-import logo from '../../logoalma.png';
+import logo from '../../images/logoAlmacen.png';
 import './navbar.css'
-
+import { CartWidget } from '../CartWidget/CartWidget'
 export const Nabvar = () => {
 return(
 <header className="header">
@@ -8,6 +8,7 @@ return(
     <img className="logo" src={logo} alt=""/>
     <nav className="navbar">
         <ul className="links">
+            <CartWidget/>
             <li className="link">
                 <a href="" className="linkitem">Inicio</a>
             </li>
