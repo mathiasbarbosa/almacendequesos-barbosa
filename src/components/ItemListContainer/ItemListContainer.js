@@ -1,17 +1,30 @@
 import './ItemListContainer.css'
-import cremoso from '../../images/cremoso.jpg';
-import { ItemCount } from '../ItemCount/ItemCount'
-export const ItemListContainer = (props) => {
+import {ITemList} from '../ItemList/ItemList' 
 
-//const click = () => alert (`${props.title} agregado al carrito`)
+export const ItemListContainer = () => {
+
+    // const [prodcutos, setProductos] = useState ('')
+    // const mostrarProductos = () =>{
+
+    //     const products = ( ) => {
+    //     }
+    // let solicitudMostrarProductos = new Promise ((resolve, reject) =>{
+
+    //     setTimeout(() => {
+    //         resolve (item)
+    //     }, 3000);
+    // })
+    // .then(() => {
+    //     setProductos()
+    // })
+
+    // }
+
 
     return(
         <div className="divProdcuts">
-            <h3>{props.title}</h3>
-            <img className="productImage" src={cremoso} alt=""/>
-            <p>{props.description}</p>
-            <p>{props.price}</p>
-            <ItemCount stock='5' initial='1'/>
+            <h2 className="titleItemListContainer">Nuestros porductos</h2>
+            <ITemList/>
         </div>
     )
 }

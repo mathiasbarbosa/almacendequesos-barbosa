@@ -1,8 +1,8 @@
-.productImage{
-    width: 250px;
-    height: 200px;
-}
 .divProdcuts{
     padding: 15px;
-    width: 250px;
+}
+
+.titleItemListContainer{
+    margin-top: 50px;
+    text-align: center;
 }

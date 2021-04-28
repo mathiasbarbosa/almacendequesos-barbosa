@@ -1,0 +1,12 @@
+.divItem{
+    width: 250px;
+    height: 450px;
+    display: inline-block;
+    margin: 20px;
+    justify-content: center;
+}
+
+.productImage{
+    width: 250px;
+    height: 200px;
+}

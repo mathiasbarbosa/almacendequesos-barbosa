@@ -1,0 +1,9 @@
+.divItemList{
+    display: flex;
+    justify-content: space-around;
+}
+.buttonMostrarProductos{
+    display: flex;
+    justify-content: center;
+    
+}
