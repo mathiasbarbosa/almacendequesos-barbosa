@@ -1,10 +1,10 @@
 import './Item.css'
 import cremoso from '../../images/cremoso.jpg';
 import { ItemCount } from '../ItemCount/ItemCount'
+import {ItemDetailContainer} from '../ItemDetailContainer/ItemDetailContainer'
 
 export const Item = (props) => {
 
-//const click = () => alert (`${props.title} agregado al carrito`)
 
     return(
         <div className="divItem">
@@ -13,6 +13,7 @@ export const Item = (props) => {
             <p>{props.description}</p>
             <p>{props.price}</p>
             <ItemCount stock='5' initial='1'/>
+            <ItemDetailContainer/>
         </div>
     )
 }

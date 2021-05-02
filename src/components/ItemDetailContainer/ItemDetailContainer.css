@@ -1,0 +1,7 @@
+.divItemDetailContainer{
+    width: 100vh;
+    margin: 120px;
+    display: flex;
+    justify-content: center;
+    border: solid black;
+}
