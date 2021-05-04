@@ -1,10 +1,11 @@
 import icono from '../../images/iconoCarrito.svg';
 import './CartWidget.css'
-
+import {NavLink} from 'react-router-dom'
 export const CartWidget = () => {
     return(
-        <a href="" className="carrito">
+        <NavLink to='' activeClassName='activeLinkItem'  className="carrito">
             <img className="iconoCarrito" src={icono} alt=""/>
-        </a>
+        </NavLink>
+
     )
 }

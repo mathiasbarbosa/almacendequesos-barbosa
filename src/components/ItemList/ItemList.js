@@ -5,18 +5,21 @@ export const ITemList = () => {
 
     const item = [
         {
+            productId:'cremoso',
             title:'Lorem ipsum dolor sit amet',
             image:'./images/cremoso.jpg',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
             price:'$000',
         },
         {
+            productId:'otro',
             title:'Lorem ipsum dolor sit amet',
             image:'./images/cremoso.jpg',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
             price:'$000',
         },
         {
+            productId:'otro2',
             title:'Lorem ipsum dolor sit amet',
             image:'./images/cremoso.jpg',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
@@ -24,34 +27,34 @@ export const ITemList = () => {
         },
     ]
 
-    const [productos, setProductos] = useState([])
-    const getProductos = () =>{
-
-        let mostrarProductos = new Promise ((resolve, reject) => {
+    const [productos, setProductos] = useState(false)
+    const getProductos = (data) =>{
+        return new Promise ((resolve, reject) => {
             console.log("1")
             setTimeout(() => {
                 console.log("2")
-                resolve (   item.map(itemList => (
+                return resolve (data)
+            }, 2000);
+        })
+    }
+
+    useEffect (() => {
+        getProductos (item).then(result => {
+            setProductos(result)
+        })
+    }, [] )
+
+    return(
+        <div>
+        <div className = "divItemList">
+            {productos  ? ( productos.map(itemList => (
                                         <Item
+                                        productId={itemList.productId}
                                         title={itemList.title}
                                         image={itemList.image}
                                         description={itemList.description}
                                         price={itemList.price}
-                                        />)))
-            }, 2000);
-        })
-        .then((productos) => {
-            setProductos(productos)
-
-        })
-    }
-
-    return(
-        <div>
-        <div className="buttonMostrarProductos" >
-        <button onClick={getProductos} >Mostrar productos</button>
-        </div>
-        <div className = "divItemList">{productos}</div>
+                                        />))) :(<p>trayendo productos</p>)} </div>
         </div>
     )
 }
