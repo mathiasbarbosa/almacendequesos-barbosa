@@ -1,27 +1,30 @@
 import './ItemList.css'
 import {Item} from '../Item/Item' 
 import { useEffect, useState } from 'react'
+import cremoso from '../../images/cremoso.jpg';
+import fontina from '../../images/fontina.jpg';
+import holanda from '../../images/holanda.jpg';
 export const ITemList = () => {
 
     const item = [
         {
             productId:'cremoso',
-            title:'Lorem ipsum dolor sit amet',
-            image:'./images/cremoso.jpg',
+            title:'Cremoso',
+            image: cremoso ,
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
             price:'$000',
         },
         {
-            productId:'otro',
-            title:'Lorem ipsum dolor sit amet',
-            image:'./images/cremoso.jpg',
+            productId:'fontina',
+            title:'Fontina',
+            image:fontina ,
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
             price:'$000',
         },
         {
-            productId:'otro2',
-            title:'Lorem ipsum dolor sit amet',
-            image:'./images/cremoso.jpg',
+            productId:'Holanda',
+            title:'Holanda',
+            image:holanda,
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
             price:'$000',
         },

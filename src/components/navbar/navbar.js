@@ -14,10 +14,10 @@ return(
                 <NavLink to='/' activeClassName='activeLinkItem'  className="linkitem">Inicio</NavLink>
             </li>
             <li className="link">
-            <NavLink to='/' activeClassName='activeLinkItem'  className="linkitem">Productos</NavLink>
+                <NavLink to='/' activeClassName='activeLinkItem'  className="linkitem">Productos</NavLink>
             </li>
             <li className="link">
-            <NavLink to='' activeClassName='activeLinkItem'  className="linkitem">Nosotros</NavLink>
+                <NavLink to='' activeClassName='activeLinkItem'  className="linkitem">Nosotros</NavLink>
             </li>
         </ul>
     </nav>

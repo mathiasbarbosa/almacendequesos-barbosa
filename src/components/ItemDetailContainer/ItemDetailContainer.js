@@ -1,29 +1,31 @@
 import './ItemDetailContainer.css'
-import {ItemDetail} from '../ItemDetail/ItemDetail' 
+import {ItemDetail} from '../ItemDetail/ItemDetail'
+import cremoso from '../../images/cremoso.jpg';
+import fontina from '../../images/fontina.jpg';
+import holanda from '../../images/holanda.jpg'; 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
 export const ItemDetailContainer = () =>{
-    console.log("products")
 const item = [
     {
         productId:'cremoso',
-        title:'Lorem ipsum dolor sit amet',
-        image:'./images/cremoso.jpg',
+        title:'Cremoso',
+        image: cremoso ,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
         price:'$000',
     },
     {
-        productId:'otro',
-        title:'Lorem ipsum dolor sit amet',
-        image:'./images/cremoso.jpg',
+        productId:'fontina',
+        title:'Fontina',
+        image:fontina ,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
         price:'$000',
     },
     {
-        productId:'otro2',
-        title:'Lorem ipsum dolor sit amet',
-        image:'./images/cremoso.jpg',
+        productId:'Holanda',
+        title:'Holanda',
+        image:holanda,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
         price:'$000',
     },
@@ -37,16 +39,16 @@ const getProductos = (data) =>{
 
 useEffect (() => {
         getProductos (item)
-        const products = item.filter((items) => items.productId === productId)
+        const products = item.find((items) => items.productId === productId)
         setProductos(products)
     }, [productId] )
 
 return(
-    <div>
+    <div className="divItemDetailContainer">
         {productos  ? ( 
                 <ItemDetail
                 title={productos.title}
-                // image={productos.image}
+                image={productos.image}
                 description={productos.description}
                 price={productos.price}
                 />) :(<p>trayendo productos</p>)} 

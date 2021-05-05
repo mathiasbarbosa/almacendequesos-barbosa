@@ -8,7 +8,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 function App() {
 
   return (
-    <div>
+    <div className="home">
       <BrowserRouter>
       <Nabvar/>
       <Switch>

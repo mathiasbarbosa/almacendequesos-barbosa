@@ -1,10 +1,7 @@
 .divItemDetailContainer{
     width: 100vh;
     margin: 120px;
+    margin-left: 390px;
     display: flex;
     justify-content: center;
-    border: solid black;
-}
-.color{
-    background-color: red;
 }

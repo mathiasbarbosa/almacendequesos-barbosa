@@ -1,12 +1,18 @@
-// import cremoso from '../../images/cremoso.jpg';
+import './ItemDetail.css'
+import { ItemCount } from '../ItemCount/ItemCount'
 export const ItemDetail = (props) => {
     return(
         <div className="divItemDetail">
-        <h3>{props.title}</h3>
-        {/* <img className="productImage" src={cremoso} alt=""/> */}
-        <p>{props.description}</p>
-        <p>{props.price}</p>
-        {/* <ItemCount stock='5' initial='1'/> */}
-    </div>
+            <div className= "divItemDetailTitle">
+                <h2>{props.title}</h2>
+                <p>{props.description}</p>
+                <p>{props.price}</p>
+                <ItemCount stock='5' initial='1'/>
+            </div>
+            <div className="divItemDetailImage">
+                <img className="productImage" src={props.image} alt=""/> 
+            </div>
+            {/* <ItemCount stock='5' initial='1'/> */}
+        </div>
     )
 }

@@ -1,0 +1,17 @@
+.divItemDetail{
+
+}
+.divItemDetailTitle{
+    margin-left: 450px;
+    margin-bottom: -40px;
+    width:  150px;
+    display: block;
+    
+}
+.divItemDetailImage{
+    margin-top: -250px;
+}
+.productImage{
+    width: 400px;
+    height: 350px;
+}
