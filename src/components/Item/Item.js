@@ -11,7 +11,6 @@ export const Item = (props) => {
             <img className="productImagen" src={props.image} alt=""/>
             <p>{props.description}</p>
             <p>{props.price}</p>
-            <ItemCount stock='5' initial='1'/>
             <Link to ={`/itemdetailcontainer/${props.productId}`}> <span>ver mas</span></Link>
         </div>
     )

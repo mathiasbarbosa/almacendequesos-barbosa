@@ -14,6 +14,7 @@ const item = [
         image: cremoso ,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
         price:'$000',
+        stock:5,
     },
     {
         productId:'fontina',
@@ -21,6 +22,7 @@ const item = [
         image:fontina ,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
         price:'$000',
+        stock:5,
     },
     {
         productId:'Holanda',
@@ -28,8 +30,10 @@ const item = [
         image:holanda,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
         price:'$000',
+        stock:5,
     },
 ]
+
 const [productos, setProductos] = useState(false)
 const { productId } = useParams()
 console.log(productId);
@@ -51,6 +55,7 @@ return(
                 image={productos.image}
                 description={productos.description}
                 price={productos.price}
+                stock={productos.stock}
                 />) :(<p>trayendo productos</p>)} 
     </div>
     
