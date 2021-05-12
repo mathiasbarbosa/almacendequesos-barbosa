@@ -36,7 +36,7 @@ export const ItemDetail = (props) => {
             <div className="divItemDetailImage">
                 <img className="productImage" src={props.image} alt=""/> 
             </div>
-            {/* <ItemCount stock='5' initial='1'/> */}
+
         </div>
     )
 }

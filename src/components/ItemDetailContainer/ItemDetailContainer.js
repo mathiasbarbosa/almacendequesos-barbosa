@@ -8,31 +8,31 @@ import { useParams } from 'react-router'
 
 export const ItemDetailContainer = () =>{
 const item = [
-    {
-        productId:'cremoso',
-        title:'Cremoso',
-        image: cremoso ,
-        description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
-        price:'$000',
-        stock:5,
-    },
-    {
-        productId:'fontina',
-        title:'Fontina',
-        image:fontina ,
-        description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
-        price:'$000',
-        stock:5,
-    },
-    {
-        productId:'Holanda',
-        title:'Holanda',
-        image:holanda,
-        description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
-        price:'$000',
-        stock:5,
-    },
-]
+        {
+            productId:'cremoso',
+            title:'Cremoso',
+            image: cremoso ,
+            description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
+            price:'$000',
+            category:'blando'
+        },
+        {
+            productId:'fontina',
+            title:'Fontina',
+            image:fontina ,
+            description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
+            price:'$000',
+            category:'blando'
+        },
+        {
+            productId:'Holanda',
+            title:'Holanda',
+            image:holanda,
+            description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
+            price:'$000',
+            category:'blando'
+        },
+    ]
 
 const [productos, setProductos] = useState(false)
 const { productId } = useParams()
