@@ -1,7 +1,7 @@
 
 import './ItemCount.css'
 
-export const ItemCount = ({value,Add,substrac}) => {
+export const ItemCount = ({value,substrac,addItem,quantity}) => {
 
 
 
@@ -9,8 +9,8 @@ export const ItemCount = ({value,Add,substrac}) => {
         
         <div>
             <input type="" value={value} />
-            <button onClick={Add}>+</button> <button onClick={substrac}>-</button>
-            <button onClick={Add}>Agregar al Carrito</button>
+            <button onClick={addItem}>+</button> <button onClick={substrac}>-</button>
+            <button type="submit" value = {value} onClick={addItem}>Agregar al Carrito <p>{quantity}</p></button>
         </div>
 
     )

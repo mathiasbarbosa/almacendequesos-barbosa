@@ -5,11 +5,13 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 import {Cart} from './components/Cart/Cart'
 import {Category} from "./components/Category/category"
+import {CartProvider} from './components/Context/CartContext'
 
 function App() {
 
   return (
     <div className="home">
+      <CartProvider>
       <BrowserRouter>
       <Nabvar/>
       <Switch>
@@ -25,6 +27,7 @@ function App() {
         </Route>
       </Switch>
       </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
