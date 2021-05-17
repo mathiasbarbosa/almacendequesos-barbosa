@@ -7,10 +7,21 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
     const [quantity, setQuantity] = useState(0)
     const addToCart = (item, quantity) => {
-        setCart([...cart, {'nombre':item= item.title, 'quantity':quantity= cart.length,}])
         // setQuantity(cart.length)
-        console.log(cart);
-        
+            setCart([...cart,  item = {'nombre':item= item.title, 'quantity':quantity= cart.length,}])
+            const newCart = cart
+            console.log(cart);
+            const resultado = newCart.find( p => p.nombre === item.nombre);
+            console.log(resultado);
+            newCart.forEach((p) =>{
+                if (p.nombre === item.nombre) {
+                    p.quantity = p.quantity + quantity
+                    setCart([...cart]) 
+                }
+            })
+
+
+
     }
 
     const cantidadCarrito = (quantity) => {

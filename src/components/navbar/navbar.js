@@ -8,7 +8,7 @@ export const Nabvar = () => {
 const {cantidadCarrito} = useContext(CartContext)
 
 // console.log(quantity,'quantity');
-
+const{quantity} = useContext(CartContext)
 
 return(
 <header className="header">
@@ -17,7 +17,7 @@ return(
     <nav className="navbar">
         <ul className="links">
             <CartWidget 
-            value = {cantidadCarrito()}
+            value = {quantity}
             />
             <li className="link">
                 <NavLink to='/' activeClassName='activeLinkItem'  className="linkitem">Inicio </NavLink>
