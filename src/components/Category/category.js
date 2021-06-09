@@ -1,54 +1,53 @@
 import { useParams } from "react-router"
-import {ItemDetail} from '../ItemDetail/ItemDetail'
-import cremoso from '../../images/cremoso.jpg';
-import fontina from '../../images/fontina.jpg';
-import holanda from '../../images/holanda.jpg'; 
-import {NavLink} from 'react-router-dom'
+import {Item} from '../Item/Item'
+import { useEffect, useState } from "react"
+import {getFireStore} from '../Firebase'
 
 export const Category = () => {
-    const item = [
-        {
-            productId:'cremoso',
-            title:'Cremoso',
-            image: cremoso ,
-            description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
-            price:'$000',
-            category:'blando'
-        },
-        {
-            productId:'fontina',
-            title:'Fontina',
-            image:fontina ,
-            description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
-            price:'$000',
-            category:'semiblandos'
-        },
-        {
-            productId:'Holanda',
-            title:'Holanda',
-            image:holanda,
-            description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti!',
-            price:'$000',
-            category:'semiblandos'
-        },
-    ]
-    const { categoryId } = useParams()
-	const productos = item.filter((items) => items.category === categoryId)
-    console.log(productos);
+    const { category } = useParams()
+    const [items, setItems] = useState([])
+    useEffect (
+        () => {
+            const getData = () => {
+                const db = getFireStore()
+                const itemCollection = db.collection('items')
+                if (category) {
+                    const itemsCategory = itemCollection.where('category', '==', category)
+                    console.log(itemsCategory);
+                    itemsCategory.get().then(querySnapshot => {
+                        const itemsCategoryFiltrado = querySnapshot.docs.map((doc) => { 
+                            const {title,description,price,productId,image} = doc.data()
+                            return {
+                                id: doc.id,
+                                title,
+                                description,
+                                price,
+                                productId,
+                                image,
+                            }
+                    
+                    })
+                    setItems(itemsCategoryFiltrado)
+                    
+                    })
+                }
+            }
+            getData()
+            console.log(items);
+        }, [category]
+    )
 
 return(
     <div className="">
-        <NavLink to={`/category/blando`} id ="blando"activeClassName=''  className="">Blandos</NavLink>
-            <NavLink to={`/category/semiblandos`} activeClassName=''  className="">Semi-blandos</NavLink>
-            <NavLink to={`/category/duros`} activeClassName=''  className="">Duros</NavLink>
-    {productos  ? ( productos.map(itemList => (
-                                        <ItemDetail
+            { items ? ( items.map(itemList => (
+                                        <Item
                                         productId={itemList.productId}
                                         title={itemList.title}
                                         image={itemList.image}
                                         description={itemList.description}
                                         price={itemList.price}
-                                        />))) :(<p>trayendo productos</p>)}  
+                                        image={itemList.image}
+                                        />))) : (<p>trayendo produc</p>)}  
 </div>
 )
 

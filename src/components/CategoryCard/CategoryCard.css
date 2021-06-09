@@ -1,0 +1,20 @@
+.iconoCategory {
+    width: 200px;
+    height: 100px;
+    margin-top: 25px;
+   
+}
+.divCategory{
+    width: 202px;
+    height: 250px;
+    margin-top :150px ;
+    border-color: #E6C885;;
+    border-style:solid;
+    border-width: 3px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.divCategory:hover{
+    background-color: rgba(243, 226, 191, 0.775);
+}

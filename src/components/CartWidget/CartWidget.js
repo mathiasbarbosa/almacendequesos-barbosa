@@ -5,7 +5,6 @@ export const CartWidget = ({value = 0}) => {
     return(
         <NavLink to='/cart' activeClassName='activeLinkItem'  className="carrito">
             <img className="iconoCarrito" src={icono} alt=""/> 
-            {/* <input type="" value= {value} /> */}
                 <p>{value}</p>
         </NavLink>
 

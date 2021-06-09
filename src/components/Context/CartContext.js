@@ -4,54 +4,45 @@ export const CartContext = createContext()
 
 
 export const CartProvider = ({children}) => {
-    const [cart, setCart] = useState([])
-    const [quantity, setQuantity] = useState(0)
-    const addToCart = (item, quantity) => {
-        // setQuantity(cart.length)
-            setCart([...cart,  item = {'nombre':item= item.title, 'quantity':quantity= cart.length,}])
-            const newCart = cart
-            console.log(cart);
-            const resultado = newCart.find( p => p.nombre === item.nombre);
-            console.log(resultado);
-            newCart.forEach((p) =>{
-                if (p.nombre === item.nombre) {
-                    p.quantity = p.quantity + quantity
-                    setCart([...cart]) 
-                }
-            })
+const [cart, setCart] = useState([])
+const [quantity, setQuantity] = useState(0)
+
+const addItemToCart = (item,quantity) => {
+        const newCart = [...cart]
+        const findItem = isInCart(item)
+        if (findItem) {
+            newCart[newCart.findIndex(prod => prod.id === item.id )].quantity+=quantity
+            setCart({newCart})
+        }
+        { item.quantity = quantity
+        newCart.push(item)
+        setCart(newCart)
+        }
+}
+
+const isInCart = newCart => cart.find(product => product.id === newCart.id)
 
 
-
-    }
-
-    const cantidadCarrito = (quantity) => {
-        return cart.reduce((acc, p) => (acc + p.quantity) , 0)
-    }
-
+const finalizar = () => {
+    setCart([])
+}
     
-    // const removeFromCart = (productId) =>{
-    //     const newCart = cart.filter ((item) => item.productId === productId )
-    //     setCart(newCart)
-    //     // setQuantity(quantity - 1)
-    //     // console.log(quantity - 1)
-    // }
-    const removeItemFromCart = (productId) =>{
+const removeItemFromCart = (productId) =>{
         cart.splice(
             cart.findIndex((p) => p.productId !== productId, ),
             1
             );
             setCart([...cart]);
             console.log(cart);
-    }
+}
 
-    useEffect( ()=>{
-        
-        setQuantity(cart.length)
+useEffect( ()=>{
+setQuantity(cart.length)
     }, [cart])
 
-    return(
-        <CartContext.Provider value={{cart,addToCart,removeItemFromCart,quantity,cantidadCarrito}}>
-            {children}
-        </CartContext.Provider>
+return(
+    <CartContext.Provider value={{cart,removeItemFromCart,addItemToCart,quantity,finalizar}}>
+        {children}
+    </CartContext.Provider>
     )
 }

@@ -5,9 +5,7 @@ import { CartWidget } from '../CartWidget/CartWidget'
 import { useContext} from 'react'
 import {CartContext} from '../Context/CartContext'
 export const Nabvar = () => {
-const {cantidadCarrito} = useContext(CartContext)
 
-// console.log(quantity,'quantity');
 const{quantity} = useContext(CartContext)
 
 return(

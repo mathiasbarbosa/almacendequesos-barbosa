@@ -5,11 +5,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px;
-    background-color: #E6C885;
 }
 
 .title{
-    color: white;
+    color: #E6C885;
 }
 
 .navbar{
@@ -21,7 +20,6 @@
 .links{
     display: flex;
     list-style-type: none;
-    padding: 0 15px;
 }
 
 .link{
@@ -29,10 +27,15 @@
 }
 
 .linkitem{
-    color: white;
+    color: #E6C885;
     text-decoration: none;
 }
-
+.linkitem:hover{
+    background-color: rgba(243, 226, 191, 0.775);
+}
+.links{
+    margin-top: 50px;
+}
 .logo{
     width: 100px;
     height:100px;

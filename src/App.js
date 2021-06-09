@@ -22,7 +22,7 @@ function App() {
         <Route path= "/cart">
           <Cart/>
         </Route>
-        <Route path= "/category/:categoryId">
+        <Route path= "/category/:category">
           <Category/>
         </Route>
       </Switch>

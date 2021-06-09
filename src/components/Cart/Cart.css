@@ -1,0 +1,15 @@
+.botonFinalizar{
+    margin-left: 850px;
+}
+.linkProductos{   
+    color: #E6C885;
+    margin-left: 500px;
+    text-decoration: none;
+}
+.linkProductos:hover{
+    background-color: rgba(243, 226, 191, 0.775);
+}
+.divButtonProduct{
+    margin-top: 150px;
+    margin-left: 145px;
+}
